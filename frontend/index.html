@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cátedra Dr. José Gregorio Hernández</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Loader -->
+    <div id="loader" class="loader">
+        <div class="spinner"></div>
+        <p>Cargando...</p>
+    </div>
+
+    <!-- Header -->
+    <header class="header fade-in">
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>🏥 Dr. José Gregorio Hernández</h1>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#biografia">Biografía</a></li>
+                    <li><a href="#encuestas">Encuestas</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="pages/login.html" id="btnLogin">Login</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content slide-up">
+            <h2>Cátedra Dr. José Gregorio Hernández</h2>
+            <p>Médico de los pobres - Venerable y Beato</p>
+            <a href="#biografia" class="btn-primary">Conocer más</a>
+        </div>
+    </section>
+
+    <!-- Buscador -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Buscar contenido...">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido Dinámico -->
+    <section id="contenido" class="content-section">
+        <div class="container">
+            <h2 class="section-title">Contenido Destacado</h2>
+            <div id="contentGrid" class="content-grid">
+                <!-- Se carga dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Biografía -->
+    <section id="biografia" class="biografia-section">
+        <div class="container">
+            <div class="biografia-content">
+                <div class="biografia-image">
+                    <img src="/frontend/assets/images/José_Gregorio_Hernández.jpg" alt="Dr. José Gregorio Hernández">
+                </div>
+                <div class="biografia-text">
+                    <h2>Biografía</h2>
+                    <p>José Gregorio Hernández Cisneros nació el 26 de octubre de 1864 en Isnotú, Estado Trujillo, Venezuela. Fue un médico, científico, profesor universitario y terciario franciscano venezolano.</p>
+                    <p>Reconocido por su labor humanitaria y su dedicación a los más necesitados, siendo conocido como "El Médico de los Pobres".</p>
+                    <p>Murió el 29 de junio de 1919 en Caracas, atropellado por un automóvil cuando iba a llevar medicinas a una paciente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Encuestas -->
+    <section id="encuestas" class="encuestas-section">
+        <div class="container">
+            <h2>Encuestas Activas</h2>
+            <div id="encuestasContainer">
+                <p class="info-message">Debes iniciar sesión para ver las encuestas disponibles</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de Contacto -->
+    <section id="contacto" class="contacto-section">
+        <div class="container">
+            <h2>Formulario de Contacto</h2>
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo *</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error-message"></span>
+                </div>
+
+                
+
+                <div class="form-group">
+                    <label for="fechaNacimiento">Fecha de Nacimiento *</label>
+                    <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Tipo de Consulta *</label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="tipoConsulta" value="informacion" required>
+                            Información
+                        </label>
+                        <label>
+                            <input type="radio" name="tipoConsulta" value="sugerencia">
+                            Sugerencia
+                        </label>
+                        <label>
+                            <input type="radio" name="tipoConsulta" value="queja">
+                            Queja
+                        </label>
+                        <label>
+                            <input type="radio" name="tipoConsulta" value="felicitacion">
+                            Felicitación
+                        </label>
+                    </div>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Mensaje *</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="archivo">Archivo Adjunto (Opcional)</label>
+                    <input type="file" id="archivo" name="archivo" 
+                           accept=".pdf,.doc,.docx,.jpg,.png">
+                    <span class="error-message"></span>
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    <span class="btn-text">Enviar Mensaje</span>
+                    <span class="btn-loader" style="display: none;">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Notification Container -->
+    <div id="notificationContainer"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Cátedra Dr. José Gregorio Hernández. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/form-validator.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
